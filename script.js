@@ -73,25 +73,21 @@ $('.container > *').click(function () {
                         else {
                             black_pieces--;
                         }
-                        $(".whos-turn h1").html(playing[whos_playing % 2]);
+                        $(".whos-turn h2").html(playing[whos_playing % 2]);
                         if (white_pieces == 0) {
-                            $("h1").html("Black Wins");
-                            $("h2").html("Press R to restart the game");
+                            $("h2").html("Black Wins");
                             gameover = true;
                         }
                         else if (black_pieces == 0) {
-                            $("h1").html("White Wins");
-                            $("h2").html("Press R to restart the game");
+                            $("h2").html("White Wins");
                             gameover = true;
                         }
                         if (!gameover) {
                             if ($("." + (index + 1) + " img").hasClass("white-piece") && $("." + (index + 1) + " img").hasClass("pawn") && index + 1 <= 8) {
-                                $("h1").html("White Wins");
-                                $("h2").html("Press R to restart the game");
+                                $("h2").html("White Wins");
                                 gameover = true;
                             } else if ($("." + (index + 1) + " img").hasClass("black-piece") && $("." + (index + 1) + " img").hasClass("pawn") && index + 1 >= 57) {
-                                $("h1").html("Black Wins");
-                                $("h2").html("Press R to restart the game");
+                                $("h2").html("Black Wins");
                                 gameover = true;
                             }
                         }
@@ -139,25 +135,22 @@ $('.container > *').click(function () {
 
                     prev_index = index;
                     whos_playing += 1;
-                    $(".whos-turn h1").html(playing[whos_playing % 2]);
+                    $(".whos-turn h2").html(playing[whos_playing % 2]);
 
                     if ($(current_s).hasClass("victory")) {
-                        $("h1").html(whos_playing % 2 == 1 ? "White Wins" : "Black Wins");
-                        $("h2").html("Press R to restart the game");
+                        $("h2").html(whos_playing % 2 == 1 ? "White Wins" : "Black Wins");
                         gameover = true;
                     }
                     if (!gameover) {
                         if ($(current_s + " img").hasClass("white-piece") && $(current_s + " img").hasClass("pawn") && index + 1 <= 8) {
                             whos_playing++; 
-                            $(".whos-turn h1").html(playing[whos_playing % 2]);
-                            $("h1").html("White Wins"); 
-                            $("h2").html("Press R to restart the game");
+                            $(".whos-turn h2").html(playing[whos_playing % 2]);
+                            $("h2").html("White Wins"); 
                             gameover = true; 
                         } else if ($(current_s + " img").hasClass("black-piece") && $(current_s + " img").hasClass("pawn") && index + 1 >= 57) {
                             whos_playing++; 
-                            $(".whos-turn h1").html(playing[whos_playing % 2]);
-                            $("h1").html("Black Wins"); 
-                            $("h2").html("Press R to restart the game");
+                            $(".whos-turn h2").html(playing[whos_playing % 2]);
+                            $("h2").html("Black Wins"); 
                             gameover = true;
                         }
                     }
@@ -275,7 +268,7 @@ function create_game_temp() {
     }
 }
 document.addEventListener("keypress", function (event) {
-    if (event.key === "r" && gameover == true) {
+    if (event.key == "r" && gameover == true) {
         location.reload();
     }
 });
