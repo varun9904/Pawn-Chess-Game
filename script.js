@@ -173,11 +173,9 @@ function moveWhitePawn(index) {
     }
     var right = up_index + 1;
     var left = up_index - 1;
-    var touch_right = index + 1;
-    var touch_left = index - 1;
+    
     if (right >= 1 && up_index % 8 != 0) {
         var right_s = "." + right;
-        var touch_right_s = "." + touch_right;
         if ($(right_s).hasClass("piece") && $(right_s + " img").hasClass("black-piece")) {
             $(right_s + " img").toggleClass("circle");
             possible_moves.push(right);
@@ -185,7 +183,6 @@ function moveWhitePawn(index) {
     }
     if (left >= 1 && up_index % 8 != 1) {
         var left_s = "." + left;
-        var touch_left_s = "." + touch_left;
         if ($(left_s).hasClass("piece") && $(left_s + " img").hasClass("black-piece")) {
             $(left_s + " img").toggleClass("circle");
             possible_moves.push(left);
@@ -213,11 +210,8 @@ function moveBlackPawn(index) {
     }
     var right = down_index + 1;
     var left = down_index - 1;
-    var touch_right = index + 1;
-    var touch_left = index - 1;
     if (right <= 64 && down_index % 8 != 0) {
         var right_s = "." + right;
-        var touch_right_s = "." + touch_right;
         if ($(right_s).hasClass("piece") && $(right_s + " img").hasClass("white-piece")) {
             $(right_s + " img").toggleClass("circle");
             possible_moves.push(right);
@@ -225,7 +219,6 @@ function moveBlackPawn(index) {
     }
     if (left <= 64 && down_index % 8 != 1) {
         var left_s = "." + left;
-        var touch_left_s = "." + touch_left;
         if ($(left_s).hasClass("piece") && $(left_s + " img").hasClass("white-piece")) {
             $(left_s + " img").toggleClass("circle");
             possible_moves.push(left);
