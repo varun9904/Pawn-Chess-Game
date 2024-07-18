@@ -17,7 +17,7 @@ The **Pawn Chess Game** is an interactive chess game that focuses on the movemen
 
 You can play the game online by visiting the following link:
 
-- [Play Pawn Chess Game]((https://varun9904.github.io/Pawn-Chess-Game/))
+- https://varun9904.github.io/Pawn-Chess-Game/
 
 ## Usage
 
