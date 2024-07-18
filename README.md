@@ -1,5 +1,3 @@
-# Pawn-Chess-Game
-
 # PAWN CHESS GAME
 
 ## Project Description
